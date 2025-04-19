@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Absolute Service — Корпоративные услуги в ОАЭ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #1E3A8A;
+      --accent-color: #3B82F6;
+      --bg-color: #F3F4F6;
+      --text-color: #1F2937;
+      --font-heading: 'Montserrat', sans-serif;
+      --font-body: 'Roboto', sans-serif;
+    }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+    header {
+      background-color: white;
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    header nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+    }
+    .lang-switch button {
+      margin-left: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(to right, #3B82F6, #1E3A8A);
+      color: white;
+    }
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    .btn {
+      padding: 12px 25px;
+      background: white;
+      color: var(--accent-color);
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .section {
+      padding: 60px 10%;
+      text-align: center;
+    }
+    .services, .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      flex: 1 1 200px;
+      max-width: 300px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #1F2937;
+      color: white;
+      padding: 40px 10%;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 28px; }
+      .section { padding: 40px 5%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div><strong>Absolute Service</strong></div>
+  <nav>
+    <a href="#services">Услуги</a>
+    <a href="#about">О нас</a>
+    <a href="#steps">Этапы</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+  <div class="lang-switch">
+    <button onclick="switchLang('ru')">RU</button>
+    <button onclick="switchLang('en')">EN</button>
+  </div>
+</header>
+
+<section class="hero">
+  <h1 data-ru="Корпоративные услуги в ОАЭ" data-en="Corporate Services in UAE">Корпоративные услуги в ОАЭ</h1>
+  <p data-ru="Регистрация бизнеса, счета, офисы, бухгалтерия – всё под ключ!" data-en="Business setup, banking, offices & accounting – all in one place!">
+    Регистрация бизнеса, счета, офисы, бухгалтерия – всё под ключ!
+  </p>
+  <a href="#contact" class="btn" data-ru="Оставить заявку" data-en="Get a Quote">Оставить заявку</a>
+</section>
+
+<section class="section" id="services">
+  <h2 data-ru="Наши услуги" data-en="Our Services">Наши услуги</h2>
+  <div class="services">
+    <div class="card">Регистрация компаний</div>
+    <div class="card">Открытие банковских счетов</div>
+    <div class="card">Аренда офисов</div>
+    <div class="card">Бухгалтерия и отчётность</div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2 data-ru="Связаться с нами" data-en="Get in Touch">Связаться с нами</h2>
+  <form>
+    <input type="text" placeholder="Имя / Name" style="width: 100%; padding: 10px; margin: 10px 0;"><br>
+    <input type="email" placeholder="Email" style="width: 100%; padding: 10px; margin: 10px 0;"><br>
+    <textarea placeholder="Сообщение / Message" style="width: 100%; padding: 10px; margin: 10px 0;" rows="4"></textarea><br>
+    <button class="btn" type="submit">Отправить</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 Absolute Service. Все права защищены.</p>
+</footer>
+
+<script>
+  function switchLang(lang) {
+    document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+      el.textContent = el.getAttribute('data-' + lang);
+    });
+  }
+</script>
+
+</body>
+</html>
